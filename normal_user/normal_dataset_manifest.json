@@ -1,0 +1,59 @@
+{
+  "dataset_name": "AI Model Extraction Detection - Normal User Query Dataset",
+  "version": "1.0",
+  "records": 3000,
+  "generation_seed": 20261125,
+  "victim_model_context": "BERT news-topic classifier (World, Sports, Business, Sci/Tech), same as attacker dataset v2.0.",
+  "users": 115,
+  "sessions": 407,
+  "users_by_profile": {
+    "casual_reader": 40,
+    "news_app_user": 30,
+    "student_researcher": 20,
+    "journalist_editor": 12,
+    "analyst_batch_user": 5,
+    "curious_tester": 8
+  },
+  "rows_by_profile": {
+    "curious_tester": 20,
+    "news_app_user": 865,
+    "journalist_editor": 699,
+    "analyst_batch_user": 467,
+    "student_researcher": 709,
+    "casual_reader": 240
+  },
+  "query_intent_counts": {
+    "off_topic": 20,
+    "fresh_query": 1862,
+    "trending": 399,
+    "rephrase": 246,
+    "follow_up": 412,
+    "repeat": 61
+  },
+  "intended_topic_counts": {
+    "off_topic": 23,
+    "scitech": 706,
+    "world": 735,
+    "business": 807,
+    "sports": 729
+  },
+  "unique_input_texts": 2784,
+  "time_window": [
+    "2026-10-01T05:05:43Z",
+    "2026-10-12T22:47:22Z"
+  ],
+  "limitations": [
+    "Synthetic simulated traffic from templates, not real user logs.",
+    "Texts are generated news-style statements about invented organisations/teams; countries and cities are real names but events are fictional.",
+    "victim_prediction and victim_confidence_scores are EMPTY: must be filled from the real victim API (replay_queries_to_api.py); intended_topic is the generator's intent, not ground truth.",
+    "Timestamps are simulated; the API logger records its own arrival time unless replay preserves/forwards request_timestamp.",
+    "Exact duplicates exist by design (repeat retries and cross-user trending stories)."
+  ],
+  "leakage_controls": [
+    "Do not send label, attack_strategy, user_profile, query_intent or intended_topic to the API.",
+    "Join labels to API logs offline using query_id.",
+    "Exclude query_id, user_id, session_id, attack_strategy, sequence_index, generation_seed, label, user_profile, query_intent, intended_topic from detector features.",
+    "Split by user/session, never by random rows.",
+    "Send normal and attacker traffic through the same API and logging path."
+  ]
+}

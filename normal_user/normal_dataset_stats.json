@@ -1,0 +1,60 @@
+{
+  "records": 3000,
+  "users": 115,
+  "sessions": 407,
+  "rows_by_profile": {
+    "curious_tester": 20,
+    "news_app_user": 865,
+    "journalist_editor": 699,
+    "analyst_batch_user": 467,
+    "student_researcher": 709,
+    "casual_reader": 240
+  },
+  "users_by_profile": {
+    "casual_reader": 40,
+    "news_app_user": 30,
+    "student_researcher": 20,
+    "journalist_editor": 12,
+    "analyst_batch_user": 5,
+    "curious_tester": 8
+  },
+  "query_intent_counts": {
+    "off_topic": 20,
+    "fresh_query": 1862,
+    "trending": 399,
+    "rephrase": 246,
+    "follow_up": 412,
+    "repeat": 61
+  },
+  "intended_topic_counts": {
+    "off_topic": 23,
+    "scitech": 706,
+    "world": 735,
+    "business": 807,
+    "sports": 729
+  },
+  "unique_input_texts": 2784,
+  "queries_per_session": {
+    "min": 1,
+    "median": 6,
+    "mean": 7.37,
+    "max": 31
+  },
+  "inter_query_gap_seconds": {
+    "median": 21.0,
+    "p10": 5.0,
+    "p90": 106.0
+  },
+  "words_per_query": {
+    "min": 1,
+    "median": 17.0,
+    "mean": 19.5,
+    "max": 63
+  },
+  "first_timestamp": "2026-10-01T05:05:43Z",
+  "last_timestamp": "2026-10-12T22:47:22Z",
+  "overlap_with_attacker": {
+    "exact_text_matches": 0,
+    "shared_sentences": 0
+  }
+}
