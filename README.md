@@ -1,1 +1,1 @@
-A machine-learning-based framework for detecting AI model extraction attacks through behavioral analysis of API queries. The project simulates legitimate users and attackers interacting with a victim model and aims to identify suspicious query patterns.
+An artificial intelligence approach to recognise adversarial model stealing by analysing API behaviour. This project creates both authentic and adversarial agents to interact with a target model, in order to detect anomalous behaviour.
